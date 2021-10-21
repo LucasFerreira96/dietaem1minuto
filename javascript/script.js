@@ -40,8 +40,18 @@ function calcTDEE(sexo, peso, altura, idade, atividade) {
     }
 }
 var result = new calcTDEE("Homem", 52, 165, 38, "Leve");
-console.log(result);
-console.log(result.calcTMB());
-console.log(result.TDEE());
+
+console.log("Sua TMB é de " +
+            result.calcTMB() +
+            "kcal e o seu TDEE é de " +
+            result.TDEE()
+            + "kcal");
+
+
+// console.log(result);
+// console.log(result.calcTMB());
+// console.log(result.TDEE());
+
+// FORMULA TMB
 // Para as mulheres: 655 + (9,6 x peso em kg) + (1,8 x altura em cm) – (4,7 x idade em anos)
 // Para os homens: 66 + (13,7 x peso em kg) + (5 x altura em cm) – (6,8 x idade em anos
