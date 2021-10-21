@@ -39,7 +39,7 @@ function calcTDEE(sexo, peso, altura, idade, atividade) {
         }
     }
 }
-var result = new calcTDEE("Homem", 52, 165, 38, "Leve");
+var result = new calcTDEE("Homem", 52, 165, 38, "Muito Intenso");
 
 console.log("Sua TMB é de " +
             result.calcTMB() +
@@ -52,6 +52,32 @@ console.log("Sua TMB é de " +
 // console.log(result.calcTMB());
 // console.log(result.TDEE());
 
-// FORMULA TMB
+// FORMULA TMB - Taxa metabólica basal (Estas são as calorias que seu corpo gasta simplesmente para sobreviver, ou seja, se você ficar 24 hrs dormindo.)
 // Para as mulheres: 655 + (9,6 x peso em kg) + (1,8 x altura em cm) – (4,7 x idade em anos)
 // Para os homens: 66 + (13,7 x peso em kg) + (5 x altura em cm) – (6,8 x idade em anos
+ 
+// FORMULA TDEE (Estas são as calorias que seu corpo gasta em média para sobreviver e realizar as suas atividades do cotidiano, considerando o seu nível médio de atividade.)
+//  NIVEL DE ATIVIDADE - FATOR MULTIPLICATIVO
+//  SEDENTÁRIO -                1.2
+//  EXERCÍCIO LEVE -            1.375
+//  EXERCÍCIO MODRADO -         1.55
+//  EXERCÍCIO INTENSO -         1.725
+//  EXERCÍCIO MUITO INTENSO -   1.9
+
+// OBJETIVO
+
+// EMAGRECER - DEFICIT DE 15% DO TDEE
+// EMAGRECER AGRESSIVO - DEFICIT DE 30% DO TDEE
+// MANTER - TDEE
+// GANHAR MASSA - SUPERAVIT 15% DO TDEE
+// GANHAR MASSA AGRESSIVO - SUPERAVIT 30% DO TDEE
+
+// Formula Macronutrientes
+
+// ESTADO ATUAL
+// 1-Magrelo(a) | 2-Massa magra considerável e BF não muito alto | 3-Falso(a) Magro(a) | 4-Muito acima do peso
+
+// 1 - PROTEINA: 2 GRAMAS POR KILO CORPORAL | GORDURA: 0.8 GRAMAS POR KILO CORPORAL | CARBOIDRATO: RESTANTE DAS CALORIAS DISPONÍVEIS
+// 2 - PROTEINA: 2.5 GRAMAS POR KILO CORPORAL | GORDURA: 0.8 GRAMAS POR KILO CORPORAL | CARBOIDRATO: RESTANTE DAS CALORIAS DISPONÍVEIS
+// 3 - PROTEINA: 2.2 GRAMAS POR KILO CORPORAL | GORDURA: 0.8 GRAMAS POR KILO CORPORAL | CARBOIDRATO: RESTANTE DAS CALORIAS DISPONÍVEIS
+// 3 - PROTEINA: 1.8 GRAMAS POR KILO CORPORAL | GORDURA: 0.8 GRAMAS POR KILO CORPORAL | CARBOIDRATO: RESTANTE DAS CALORIAS DISPONÍVEIS
