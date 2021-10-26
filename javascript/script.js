@@ -1,35 +1,16 @@
+function mudaTMB(){
+    let tmb = document.getElementById('resultTMB');
+    tmb.innerHTML = '<input type="text" name="tmb" id="tmb" size="50" value="Seu gasto em repouso é de  ' + calcTMB() + 'kcal." disabled>';
+}
 
-function calcular(){
-      
-    var sexo = document.querySelector('input[name="sexo"]:checked').value;
-    var peso = document.getElementById('peso').value;
-    var altura = document.getElementById('altura').value;
-    var idade = document.getElementById('idade').value;
-    var atividade = document.querySelector('input[name="atividade"]:checked').value;
-    var objetivo = document.querySelector('input[name="objetivo"]:checked').value;
-    var estadoAtual = document.querySelector('input[name="estadoAtual"]:checked').value;
+function calcTMB(){
 
-    var resultTMB = calcTMB(sexo, peso, altura, idade);
-    var resultTDEE = calcTDEE(resultTMB, atividade);
-    var resultObjetivo = calcObjetivo(resultTDEE, objetivo);
-    var resultMacros = calcMacros(peso, estadoAtual, resultObjetivo);
+    let sexo = document.querySelector('input[name="sexo"]:checked').value;
+    let peso = document.getElementById('peso').value;
+    let altura = document.getElementById('altura').value;
+    let idade = document.getElementById('idade').value;
 
-    console.log("Seu gasto em repouso é de " +
-            resultTMB +
-            "kcal. O seu gasto total diário é de " +
-            resultTDEE + 
-            "kcal. Então, você deve consumir "+
-            resultObjetivo + "kcal por dia para chegar ao seu objetivo");
-
-    console.log("Os seus macronutrientes diários são: " +
-                resultMacros.proteina + " gramas de protéina, " +
-                resultMacros.gordura + " gramas de gordura e " +
-                resultMacros.carboidrato + " gramas de carboidrato.")
-};
-
-function calcTMB(sexo, peso, altura, idade) {
-
-    var calcTMB;
+    let calcTMB;
 
     if (sexo == "Feminino") {
         calcTMB = function () {
@@ -40,21 +21,49 @@ function calcTMB(sexo, peso, altura, idade) {
             return 66 + (13.7 * peso) + (5 * altura) - (6.8 * idade);
         }
     }
-
+    
     return calcTMB();
 }
+function mudaTDEE(){
+    let tdee = document.getElementById('resultTDEE');
+    tdee.innerHTML = '<input type="text" name="tdee" id="tdee" size="50" value="O seu gasto total diário é de ' + calcTDEE() + 'kcal" disabled>';
+}
 
-function calcTDEE(resultTMB, atividade){
+function calcTDEE(){
+
+    let resultTMB = calcTMB();
+    let atividade = document.querySelector('input[name="atividade"]:checked').value;
 
     return resultTMB * atividade;
     
 }
 
-function calcObjetivo(resultTDEE, objetivo){
+function mudaObjetivo(){
+    let objetivo = document.getElementById('resultObjetivo');
+    objetivo.innerHTML = '<input type="text" name="objetivo" id="objetivo" size="50" value="Seu consumo diário de calorias deve ser de ' + calcObjetivo() + 'kcal." disabled>';
+}
+
+
+function calcObjetivo(){
+
+    let resultTDEE = calcTDEE();
+    let objetivo = document.querySelector('input[name="objetivo"]:checked').value;
+    
     return resultTDEE * objetivo;
 }
 
-function calcMacros(peso, estadoAtual, resultObjetivo){
+function mudaMacros(){
+    let macros = document.getElementById('resultMacros');
+    let resultMacros = calcMacros();
+    macros.innerHTML = '<input type="text" name="proteina" id="proteina"  size="25" value="Proteína: '+ resultMacros.proteina +'gr  " disabled> <input type="text" name="gordura" id="gordura"  size="25" value="Gordura: '+resultMacros.gordura+'gr " disabled> <input type="text" name="carboidrato" id="carboidrato"  size="25" value="Carboidrato: '+resultMacros.carboidrato+'gr " disabled>'
+
+}
+function calcMacros(){
+
+    let resultObjetivo = calcObjetivo();
+    let peso = document.getElementById('peso').value;
+    let estadoAtual = document.querySelector('input[name="estadoAtual"]:checked').value;
+
     var proteina = peso * estadoAtual;
     var gordura = peso * 0.8;
     var carboidrato = [resultObjetivo - (proteina * 4) - (gordura * 9)]/4;
