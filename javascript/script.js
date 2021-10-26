@@ -64,9 +64,9 @@ function calcMacros(){
     let peso = document.getElementById('peso').value;
     let estadoAtual = document.querySelector('input[name="estadoAtual"]:checked').value;
 
-    var proteina = peso * estadoAtual;
-    var gordura = peso * 0.8;
-    var carboidrato = [resultObjetivo - (proteina * 4) - (gordura * 9)]/4;
+    let proteina = peso * estadoAtual;
+    let gordura = peso * 0.8;
+    let carboidrato = [resultObjetivo - (proteina * 4) - (gordura * 9)]/4;
 
     return macros = {
         proteina: proteina,
