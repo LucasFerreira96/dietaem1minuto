@@ -14,11 +14,11 @@ function calcTMB(){
 
     if (sexo == "Feminino") {
         calcTMB = function () {
-            return 655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade);
+            return Math.round(655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade));
         }
     } else {
         calcTMB = function () {
-            return 66 + (13.7 * peso) + (5 * altura) - (6.8 * idade);
+            return Math.round(66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
         }
     }
     
@@ -34,7 +34,7 @@ function calcTDEE(){
     let resultTMB = calcTMB();
     let atividade = document.querySelector('input[name="atividade"]:checked').value;
 
-    return resultTMB * atividade;
+    return Math.round(resultTMB * atividade);
     
 }
 
@@ -49,7 +49,7 @@ function calcObjetivo(){
     let resultTDEE = calcTDEE();
     let objetivo = document.querySelector('input[name="objetivo"]:checked').value;
     
-    return resultTDEE * objetivo;
+    return Math.round(resultTDEE * objetivo);
 }
 
 function mudaMacros(){
@@ -69,9 +69,9 @@ function calcMacros(){
     let carboidrato = [resultObjetivo - (proteina * 4) - (gordura * 9)]/4;
 
     return macros = {
-        proteina: proteina,
-        gordura: gordura,
-        carboidrato: carboidrato
+        proteina: Math.round(proteina),
+        gordura: Math.round(gordura),
+        carboidrato: Math.round(carboidrato)
     }
 }
 
