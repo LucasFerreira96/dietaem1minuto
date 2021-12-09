@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dieta em 1 minuto</title>
+    <link rel="ico" href="./images/ico.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 class="title">Dieta em 1 minuto</h1>
+    </header>
+    <section>
+        <div class="formContainer">
+            <h2 class="mb">Calcule os macronutrientes da sua dieta em apenas 1 minuto!</h2>
+            <p class="mb">Simplifique sua vida calculando a quantidade de carboidrato, proteína e gordura necessária na sua dieta.</p>
+            <form name="calc" id="calcDieta" action="#">
+                <strong>Sexo</strong><br>
+                <input type="radio" name="sexo" id="masculino" value="Masculino" checked>Masculino <br>
+                <input type="radio" name="sexo" id="feminino" value="Feminino">Feminino <br><br>
+                <strong>Peso (kg)</strong> <br>
+                <input type="text" name="peso" id="peso" required> <br><br>
+                <strong>Altura (cm)</strong> <br>
+                <input type="number" name="altura" id="altura" required> <br><br>
+                <strong>Idade (anos)</strong> <br>
+                <input type="number" name="idade" id="idade" onchange="calcTMB()"required> <br><br>
+                <input type="text" name="tmb" id="tmb">
+                <strong>Nível de atividade</strong> <br>
+                <input type="radio" name="atividade" id="sedentario" value="1.2" checked>Sedentárilo <br>
+                <input type="radio" name="atividade" id="leve" value="1.375">Levemente ativo <br>
+                <input type="radio" name="atividade" id="moderadamenteAtivo" value="1.55">Moderadamente Ativo <br>
+                <input type="radio" name="atividade" id="muitoAtivo" value="1.725">Muito Ativo <br>
+                <input type="radio" name="atividade" id="extremamenteAtivo" value="1.9">Extremamente Ativo <br><br>
+                <strong>Objetivo</strong> <br>
+                <input type="radio" name="objetivo" id="emagrecer" value="0.85" checked>Emagrecer <br>
+                <input type="radio" name="objetivo" id="emagrecerAgressivo" value="0.70">Emagrecer Agressivo <br>
+                <input type="radio" name="objetivo" id="manter" value="1">Manter <br>
+                <input type="radio" name="objetivo" id="ganhar" value="1.15">Ganhar Massa <br>
+                <input type="radio" name="objetivo" id="ganharAgressivo" value="1.30">Ganhar Massa Agressivo <br><br>
+                <strong>Estado Atual</strong> <br>
+                <input type="radio" name="estadoAtual" id="magrelo" value="2" checked>Magrelo <br>
+                <input type="radio" name="estadoAtual" id="atletico" value="2.5">Atlético (Massa magra considerável, pouca gordura corporal) <br>
+                <input type="radio" name="estadoAtual" id="falsoMagro" value="2.2">Falso Magro (Pouca massa magra, gordura na região abdominal) <br>
+                <input type="radio" name="estadoAtual" id="obeso" value="1.8">Muito acima do peso<br><br>
+                <strong><input type="button" name="submit" value="Calcular" onclick="calcular()" /></strong> <br><br>    
+            </form>
+        </div>
+
+    </section>
+    <footer>
+        <img class="picture" src="./images/face.jpg">
+        <div class="description">
+            <h3>O Palestrante</h3>
+            <p id="p1">Carlos Fontana é conhecido por dar palestras que abordam a estrutura do marketing tradicional. Prepare-se para sair do evento com uma nova visao do que é possível ser feito para o seu negócio decolar.</p>
+            <p>Formado em Marketing pela Universidade XYZ e fundador da MarkUp, a empresa vencedora dos últimos 5 Prêmios MarketingBr.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
