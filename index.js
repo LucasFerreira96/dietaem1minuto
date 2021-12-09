@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
+//Importing Model
+const Calc = require("./calc/Calc");
+
 //View Engine
 app.set("view engine", "ejs");
 
