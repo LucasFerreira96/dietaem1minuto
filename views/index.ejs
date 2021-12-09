@@ -7,48 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="calc" id="calcDieta" action="#">
+    <form method="POST" action="/calcDieta">
         <strong>Sexo</strong><br>
-        <input type="radio" name="sexo" id="masculino" value="Masculino" onchange="mudaTMB()">Masculino <br>
-        <input type="radio" name="sexo" id="feminino" value="Feminino"onchange="mudaTMB()" >Feminino <br><br>
+        <input type="radio" name="sexo" id="masculino" value="Masculino">Masculino <br>
+        <input type="radio" name="sexo" id="feminino" value="Feminino">Feminino <br><br>
         <strong>Peso (kg)</strong> <br>
-        <input type="text" name="peso" id="peso" onchange="mudaTMB()" required> <br><br>
+        <input type="text" name="peso" id="peso" required> <br><br>
         <strong>Altura (cm)</strong> <br>
-        <input type="number" name="altura" id="altura" onchange="mudaTMB()" required> <br><br>
+        <input type="number" name="altura" id="altura" required> <br><br>
         <strong>Idade (anos)</strong> <br>
-        <input type="number" name="idade" id="idade" onchange="mudaTMB()" required> <br><br>
-        <div id="resultTMB">
-            <input type="text" name="tmb" id="tmb" size="50" value="Seu gasto em repouso é de " disabled>
-        </div><br><br>
+        <input type="number" name="idade" id="idade" required> <br><br>
         <strong>Nível de atividade</strong> <br>
-        <input type="radio" name="atividade" id="sedentario" value="1.2" onchange="mudaTDEE()">Sedentárilo <br>
-        <input type="radio" name="atividade" id="leve" value="1.375" onchange="mudaTDEE()">Levemente ativo <br>
-        <input type="radio" name="atividade" id="moderadamenteAtivo" value="1.55" onchange="mudaTDEE()">Moderadamente Ativo <br>
-        <input type="radio" name="atividade" id="muitoAtivo" value="1.725" onchange="mudaTDEE()">Muito Ativo <br>
-        <input type="radio" name="atividade" id="extremamenteAtivo" value="1.9" onchange="mudaTDEE()">Extremamente Ativo <br><br>
-        <div id="resultTDEE">
-            <input type="text" name="TDEE" id="TDEE" size="50" value="O seu gasto total diário é de " disabled>
-        </div><br><br>
+        <input type="radio" name="atividade" id="sedentario" value="1.2">Sedentárilo <br>
+        <input type="radio" name="atividade" id="leve" value="1.375">Levemente ativo <br>
+        <input type="radio" name="atividade" id="moderadamenteAtivo" value="1.55">Moderadamente Ativo <br>
+        <input type="radio" name="atividade" id="muitoAtivo" value="1.725">Muito Ativo <br>
+        <input type="radio" name="atividade" id="extremamenteAtivo" value="1.9">Extremamente Ativo <br><br>
         <strong>Objetivo</strong> <br>
-        <input type="radio" name="objetivo" id="emagrecer" value="0.85" onchange="mudaObjetivo()">Emagrecer <br>
-        <input type="radio" name="objetivo" id="emagrecerAgressivo" value="0.70" onchange="mudaObjetivo()">Emagrecer Agressivo <br>
-        <input type="radio" name="objetivo" id="manter" value="1" onchange="mudaObjetivo()">Manter <br>
-        <input type="radio" name="objetivo" id="ganhar" value="1.15" onchange="mudaObjetivo()">Ganhar Massa <br>
-        <input type="radio" name="objetivo" id="ganharAgressivo" value="1.30" onchange="mudaObjetivo()">Ganhar Massa Agressivo <br><br>
-        <div id="resultObjetivo">
-            <input type="text" name="objetivo" id="objetivo"  size="50" value="Seu consumo diário de calorias deve ser de " disabled>
-        </div><br><br>
+        <input type="radio" name="objetivo" id="emagrecer" value="0.85">Emagrecer <br>
+        <input type="radio" name="objetivo" id="emagrecerAgressivo" value="0.70">Emagrecer Agressivo <br>
+        <input type="radio" name="objetivo" id="manter" value="1">Manter <br>
+        <input type="radio" name="objetivo" id="ganhar" value="1.15">Ganhar Massa <br>
+        <input type="radio" name="objetivo" id="ganharAgressivo" value="1.30">Ganhar Massa Agressivo <br><br>
         <strong>Estado Atual</strong> <br>
-        <input type="radio" name="estadoAtual" id="magrelo" value="2" onchange="mudaMacros()">Magrelo <br>
-        <input type="radio" name="estadoAtual" id="atletico" value="2.5" onchange="mudaMacros()">Atlético (Massa magra considerável, pouca gordura corporal) <br>
-        <input type="radio" name="estadoAtual" id="falsoMagro" value="2.2" onchange="mudaMacros()">Falso Magro (Pouca massa magra, gordura na região abdominal) <br>
-        <input type="radio" name="estadoAtual" id="obeso" value="1.8" onchange="mudaMacros()">Muito acima do peso<br><br>
-        <div id="resultMacros">
-            <input type="text" name="proteina" id="proteina"  size="25" value="Proteína: " disabled>
-            <input type="text" name="gordura" id="gordura"  size="25" value="Gordura: " disabled>
-            <input type="text" name="carboidrato" id="carboidrato"  size="25" value="Carboidrato: " disabled>
-        </div>
+        <input type="radio" name="estadoAtual" id="magrelo" value="2">Magrelo <br>
+        <input type="radio" name="estadoAtual" id="atletico" value="2.5">Atlético (Massa magra considerável, pouca gordura corporal) <br>
+        <input type="radio" name="estadoAtual" id="falsoMagro" value="2.2">Falso Magro (Pouca massa magra, gordura na região abdominal) <br>
+        <input type="radio" name="estadoAtual" id="obeso" value="1.8">Muito acima do peso<br><br>
+        <button class="btn btn-danger">Calcular</button>
     </form>
-    <script type="text/javascript" src="./javascript/script.js"></script>
+    <!-- <script type="text/javascript" src="./javascript/script.js"></script> -->
 </body>
 </html>

@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
+//Importing Controller
+const CalcController = require("./calc/CalcController");
+
 //Importing Model
 const Calc = require("./calc/Calc");
 
@@ -14,6 +17,9 @@ app.use(express.static("public"));
 //BodyParser
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
+
+//using Controller
+app.use("/", CalcController);
 
 app.get("/", (req, res) => {
     

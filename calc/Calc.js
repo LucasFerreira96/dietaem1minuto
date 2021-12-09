@@ -1,15 +1,13 @@
 function calcTMB(sexo, peso, altura, idade) {
     
-    let calcTMB
-
     if (sexo == "Feminino") {
-        calcTMB = function () {
-            return Math.round(655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade));
-        }
+
+        return Math.round(655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade));
+
     } else {
-        calcTMB = function () {
-            return Math.round(66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
-        }
+        
+        return Math.round(66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
+        
     }
     
 
@@ -40,13 +38,11 @@ function calcMacros(resultObjetivo, peso, estadoAtual){
     }
 };
 
-let calc = {
+module.exports = {
     calcTMB,
     calcTDEE,
     calcObjetivo,
     calcMacros
 };
-
-module.exports = Calc;
 
 // module.exports = calcTMB, calcTDEE, calcObjetivo, calcMacros;
