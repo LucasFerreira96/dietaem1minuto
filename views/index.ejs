@@ -1,41 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST" action="/calcDieta">
-        <strong>Sexo</strong><br>
-        <input type="radio" name="sexo" id="masculino" value="Masculino">Masculino <br>
-        <input type="radio" name="sexo" id="feminino" value="Feminino">Feminino <br><br>
-        <strong>Peso (kg)</strong> <br>
-        <input type="text" name="peso" id="peso" required> <br><br>
-        <strong>Altura (cm)</strong> <br>
-        <input type="number" name="altura" id="altura" required> <br><br>
-        <strong>Idade (anos)</strong> <br>
-        <input type="number" name="idade" id="idade" required> <br><br>
-        <strong>Nível de atividade</strong> <br>
-        <input type="radio" name="atividade" id="sedentario" value="1.2">Sedentárilo <br>
-        <input type="radio" name="atividade" id="leve" value="1.375">Levemente ativo <br>
-        <input type="radio" name="atividade" id="moderadamenteAtivo" value="1.55">Moderadamente Ativo <br>
-        <input type="radio" name="atividade" id="muitoAtivo" value="1.725">Muito Ativo <br>
-        <input type="radio" name="atividade" id="extremamenteAtivo" value="1.9">Extremamente Ativo <br><br>
-        <strong>Objetivo</strong> <br>
-        <input type="radio" name="objetivo" id="emagrecer" value="0.85">Emagrecer <br>
-        <input type="radio" name="objetivo" id="emagrecerAgressivo" value="0.70">Emagrecer Agressivo <br>
-        <input type="radio" name="objetivo" id="manter" value="1">Manter <br>
-        <input type="radio" name="objetivo" id="ganhar" value="1.15">Ganhar Massa <br>
-        <input type="radio" name="objetivo" id="ganharAgressivo" value="1.30">Ganhar Massa Agressivo <br><br>
-        <strong>Estado Atual</strong> <br>
-        <input type="radio" name="estadoAtual" id="magrelo" value="2">Magrelo <br>
-        <input type="radio" name="estadoAtual" id="atletico" value="2.5">Atlético (Massa magra considerável, pouca gordura corporal) <br>
-        <input type="radio" name="estadoAtual" id="falsoMagro" value="2.2">Falso Magro (Pouca massa magra, gordura na região abdominal) <br>
-        <input type="radio" name="estadoAtual" id="obeso" value="1.8">Muito acima do peso<br><br>
-        <button class="btn btn-danger">Calcular</button>
-    </form>
-    <!-- <script type="text/javascript" src="./javascript/script.js"></script> -->
-</body>
-</html>
+<%- include('./partials/header.ejs') %>
+
+    <body>
+        <%- include('./partials/navbar.ejs') %>
+        <br>
+            <div class="container">
+                <hr>
+                <h4>Calcule sua dieta rapidamente apenas colocando os dados abaixo:</h4>
+                <hr>
+                <form class="row mb-3" method="POST" action="/calcDieta">
+
+                      <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" value="Masculino" checked>
+                            <label class="form-check-label" for="Masculino">
+                              Masculino
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" value="Feminino">
+                            <label class="form-check-label" for="Feminino">
+                              Feminino
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <div class="row mb-3">
+                        <label for="peso" class="col-sm-2 col-form-label">Peso (kg)</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" id="peso" name="peso">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="altura" class="col-sm-2 col-form-label">Altura (cm)</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" id="peso" name="altura">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="idade" class="col-sm-2 col-form-label">Idade (anos)</label>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" id="idade" name="idade">
+                        </div>
+                      </div>
+                      <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Nivel de atividade</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="atividade" value="1.2" checked>
+                            <label class="form-check-label" for="atividade">
+                              Sedentário
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="atividade" value="1.375" checked>
+                            <label class="form-check-label" for="atividade">
+                              Levemente ativo
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="atividade" value="1.55" checked>
+                            <label class="form-check-label" for="atividade">
+                              Moderadamente Ativo
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="atividade" value="1.725" checked>
+                            <label class="form-check-label" for="atividade">
+                              Muito Ativo
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="atividade" value="1.9" checked>
+                            <label class="form-check-label" for="atividade">
+                              Extremamente Ativo
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Objetivo</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="objetivo" value="0.85" checked>
+                            <label class="form-check-label" for="objetivo">
+                              Emagrecer
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="objetivo" value="0.70" checked>
+                            <label class="form-check-label" for="objetivo">
+                              Emagrecer Agressivo
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="objetivo" value="1" checked>
+                            <label class="form-check-label" for="objetivo">
+                                Manter
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="objetivo" value="1.15" checked>
+                            <label class="form-check-label" for="objetivo">
+                              Ganhar Massa
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="objetivo" value="1.30" checked>
+                            <label class="form-check-label" for="objetivo">
+                              Ganhar Massa Agressivo
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">Estado Atual</legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estadoAtual" value="2" checked>
+                            <label class="form-check-label" for="estadoAtual">
+                              Magrelo
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estadoAtual" value="2.5" checked>
+                            <label class="form-check-label" for="estadoAtual">
+                              Atlético
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estadoAtual" value="2.2" checked>
+                            <label class="form-check-label" for="estadoAtual">
+                                Falso Magro
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estadoAtual" value="1.8" checked>
+                            <label class="form-check-label" for="estadoAtual">
+                              Muito Acima do Peso
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <div class="d-grid gap-2 col-5">
+                         <button class="btn btn-danger">Calcular</button>
+                        </div>
+                </form>
+            </div>
+    </body>
+    <%- include('./partials/footer.ejs') %>
