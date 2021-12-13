@@ -1,11 +1,54 @@
-Olá mundo
+<%- include('./partials/header.ejs') %>
 
-<%= result.sexo %><br>
-<%= result.peso %><br>
-<%= result.altura %><br>
-<%= result.TMB %><br>
-<%= result.TDEE %><br>
-<%= result.Objetivo %><br>
-<%= result.Macros.proteina %><br>
-<%= result.Macros.gordura %><br>
-<%= result.Macros.carboidrato %><br>
+    <body>
+        <%- include('./partials/navbar.ejs') %>
+            <br>
+            <div class="container">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Feito! A sua dieta está pronta!</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>A sua taxa metabólica basal é de:<strong>
+                                <%= result.TMB %> kcal.
+                            </strong><br>
+                            O seu gasto calórico diário (TDEE) é de:<strong>
+                                <%= result.TDEE %> kcal.
+                            </strong><br>
+                            Para chegar ao seu objetivo, você precisa consumir<strong>
+                                <%= result.Objetivo %> kcal
+                            </strong> por
+                            dia.<br>
+                            O seus <strong><a href="./saiba-mais" class="link-danger" title="Saiba mais" target="_blank">macros diários</a></strong> são: </p>
+                        <hr>
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    Proteína
+                                    <input class="form-control" type="text"
+                                        placeholder="<%= result.Macros.proteina %> gr"
+                                        aria-label="Disabled input example" disabled>
+                                </div>
+                                <div class="col">
+                                    Gordura
+                                    <input class="form-control" type="text"
+                                        placeholder="<%= result.Macros.gordura %> gr"
+                                        aria-label="Disabled input example" disabled>
+                                </div>
+                                <div class="col">
+                                    Carboidrato
+                                    <input class="form-control" type="text"
+                                        placeholder="<%= result.Macros.carboidrato %> gr"
+                                        aria-label="Disabled input example" disabled>
+                                </div>
+                            </div>
+
+                        </form>
+                        <hr>
+                        <a href="/" class="btn btn-danger">Calcular novamente</a>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <%- include('./partials/footer.ejs') %>

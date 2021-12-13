@@ -5,9 +5,6 @@ const bodyParser = require("body-parser");
 //Importing Controller
 const CalcController = require("./calc/CalcController");
 
-//Importing Model
-const Calc = require("./calc/Service");
-
 //View Engine
 app.set("view engine", "ejs");
 

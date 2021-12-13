@@ -1,3 +1,9 @@
 .navbar{
     padding-left: 5rem;
 }
+.navbar-nav { 
+    flex-direction: row;
+}
+li{
+    margin-left: 2rem;
+}

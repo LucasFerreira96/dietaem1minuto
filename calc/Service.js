@@ -53,9 +53,6 @@ function resultCalc(data) {
     let Macros = calcMacros(Objetivo, peso, estadoAtual);
 
     return result = {
-            sexo,
-            peso,
-            altura,
             TMB,
             TDEE,
             Objetivo,

@@ -11,6 +11,10 @@ router.post("/calcDieta", (req, res) => {
 
 });
 
+router.get("/saiba-mais", (req, res) => {
+    res.render("saiba-mais");
+});
+
 module.exports = router;
 
 // res.render("resultDieta", {
